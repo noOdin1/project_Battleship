@@ -12,5 +12,6 @@ function gameRound() {
 
   function round() {}
 
+  return { placement, round };
 }
 
