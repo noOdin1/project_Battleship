@@ -23,7 +23,6 @@
   },
   "license": "ISC",
   "author": "noOdin1",
-  "type": "commonjs",
   "main": "index.js",
   "scripts": {
     "test": "jest",
