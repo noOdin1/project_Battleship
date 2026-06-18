@@ -8,5 +8,9 @@ function gameRound() {
   let gameboard = new Gameboard();
   let player = new Player();
 
+  function placement() {}
+
+  function round() {}
+
 }
 
