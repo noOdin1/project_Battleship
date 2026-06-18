@@ -1,7 +1,9 @@
 /* ship.js  */
 
 class Ship {
-  constructor() {}
+  constructor() {
+    console.log("Initializing Ship class");
+  }
   hit() {}
   isSunk() {}
 }

@@ -1,7 +1,9 @@
 /* gameboard.js */
 
 class Gameboard {
-  constructor() {}
+  constructor() {
+    console.log("Initializing Gameboard class");
+  }
   receiveAttack() {}
 }
 

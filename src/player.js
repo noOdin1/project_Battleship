@@ -1,7 +1,9 @@
 /* player.js */
 
 class Player {
-  constructor() {}
+  constructor() {
+    console.log("Initializing Player class");
+  }
 }
 
 export { Player };
