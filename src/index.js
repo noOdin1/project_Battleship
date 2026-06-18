@@ -1,4 +1,5 @@
 /* index.js */
-import { Player } from "src/player.js";
-import { Gameboard } from "src/gameboard.js";
-import { Ship } from "src/ship.js";
+import { Player } from "./player.js";
+import { Gameboard } from "./gameboard.js";
+import { Ship } from "./ship.js";
+
