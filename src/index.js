@@ -1,16 +1,4 @@
 /* index.js */
-
-class Ship {
-  constructor() {}
-  hit() {}
-  isSunk() {}
-}
-
-class Gameboard {
-  constructor() {}
-  receiveAttack() {}
-}
-
-class Player {
-  constructor() {}
-}
+import { Player } from "src/player.js";
+import { Gameboard } from "src/gameboard.js";
+import { Ship } from "src/ship.js";
