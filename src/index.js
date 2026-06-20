@@ -15,3 +15,4 @@ function gameRound() {
   return { placement, round };
 }
 
+gameRound();
