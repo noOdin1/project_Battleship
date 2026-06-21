@@ -28,6 +28,14 @@
   --debugBorder: 1px solid MediumVioletRed;
 }
 
+#mainDiv {
+  width: calc(var(--mobile-width) + 8px);
+  height: var(--fullViewableHeight);
+
+  margin: auto;
+  padding: var(--internalPadding);
+  border: 1px solid blue;
+}
 
 #head {
   width: var(--mobile-width);
