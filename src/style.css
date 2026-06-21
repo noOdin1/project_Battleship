@@ -28,3 +28,16 @@
   --debugBorder: 1px solid MediumVioletRed;
 }
 
+
+#head {
+  width: var(--mobile-width);
+  height: var(--headDivHeight);
+
+  margin-left: auto;
+  margin-right: auto;
+
+  padding-left: auto;
+  padding-right: auto;
+  border: var(--debugBorder);
+}
+
