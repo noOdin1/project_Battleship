@@ -41,6 +41,14 @@
   border: var(--debugBorder);
 }
 
+#mainTitle {
+  margin: auto;
+  width: 160px;
+  font-weight: 900;
+  font-size: 1.5em;
+  text-align: center;
+}
+
 #body {
   width: var(--mobile-width);
   height: var(--bodyDivHeight);
