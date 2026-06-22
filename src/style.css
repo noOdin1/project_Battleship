@@ -34,6 +34,12 @@
   --debugBorder1: 1px solid MediumVioletRed;
   --debugBorder2: 1px solid blue;
 
+  /* dimensions and styling for boards */
+  --boardWidth: 280px;
+  --boardHeight: 280px;
+  --sqWidth: calc(calc(var(--boardWidth) / 10) - 10);
+  --sqHeight: calc(calc(var(--boardHeight) / 10) - 10);
+
   --missRadius: 20px;
 }
 
