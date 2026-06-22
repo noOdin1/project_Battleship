@@ -38,10 +38,14 @@ class Gameboard {
         ["square_" + i.toString(), "boardSq", "player1"],
         "sqId_player1_" + i.toString(),
       );
+      document.getElementById("player1Board").append(boardsq1);
+      this.p1Board.push([i, boardsq1]);
       let boardsq2 = createButton(
         ["square_" + i.toString(), "boardSq", "player2"],
         "sqId_player2_" + i.toString(),
       );
+      document.getElementById("player2Board").append(boardsq2);
+      this.p2Board.push(boardsq2);
   }
 
   print_p1Board() {
