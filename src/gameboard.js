@@ -49,6 +49,10 @@ class Gameboard {
       boardsq1.addEventListener("click", buttonPressed);
       boardsq2.addEventListener("click", buttonPressed);
     }
+    // We're using the 'alt' version as there is no need to
+    // sort the arrays
+    this.p1bst.buildTreeAlt(this.p1Board);
+    this.p2bst.buildTreeAlt(this.p2Board);
   }
 
   print_p1Board() {
