@@ -29,7 +29,11 @@
   --bodyDivHeight: calc(100vh * 0.75);
   --headDivHeight: calc(100vh * 0.12);
   --footerDivHeight: calc(100vh * 0.12);
-  --debugBorder: 1px solid MediumVioletRed;
+
+  /* css debug borders */
+  --debugBorder1: 1px solid MediumVioletRed;
+  --debugBorder2: 1px solid blue;
+
 }
 
 #mainDiv {
