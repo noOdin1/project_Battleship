@@ -34,6 +34,14 @@ class Gameboard {
     const boardHSq = 10;
     // create the board squares for player1 gameboard
     for (let i = 0; i < boardVSq * boardHSq; i++) {
+      let boardsq1 = createButton(
+        ["square_" + i.toString(), "boardSq", "player1"],
+        "sqId_player1_" + i.toString(),
+      );
+      let boardsq2 = createButton(
+        ["square_" + i.toString(), "boardSq", "player2"],
+        "sqId_player2_" + i.toString(),
+      );
   }
 
   print_p1Board() {
