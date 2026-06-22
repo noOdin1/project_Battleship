@@ -27,6 +27,9 @@ class Gameboard {
     this.p2Board = [];
   }
 
+  buildBoards() {
+  }
+
   print_p1Board() {
     console.dir(this.p1Board);
   }
