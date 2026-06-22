@@ -43,6 +43,10 @@
   --missRadius: 20px;
 }
 
+body {
+  background-color: var(--htmlBodyBGcolor);
+}
+
 #mainDiv {
   width: calc(var(--mobile-width) + 8px);
   height: var(--fullViewableHeight);
