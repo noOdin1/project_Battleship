@@ -46,6 +46,9 @@ class Gameboard {
       );
       document.getElementById("player2Board").append(boardsq2);
       this.p2Board.push(boardsq2);
+      boardsq1.addEventListener("click", buttonPressed);
+      boardsq2.addEventListener("click", buttonPressed);
+    }
   }
 
   print_p1Board() {
