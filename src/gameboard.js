@@ -27,6 +27,18 @@ class Gameboard {
     this.p2Board = [];
   }
 
+  print_p1Board() {
+    console.dir(this.p1Board);
+  }
+
+  print_p1bst() {
+    console.dir(this.p1bst.returnRoot());
+  }
+
+  print_p2Board() {
+    console.dir(this.p2Board);
+  }
+
   receiveAttack() {}
 }
 
