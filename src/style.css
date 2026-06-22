@@ -25,6 +25,7 @@
 
   --htmlBodyBGcolor: rgb(215, 215, 215);
 
+  /* div dimensions */
   --bodyDivHeight: calc(100vh * 0.75);
   --headDivHeight: calc(100vh * 0.12);
   --footerDivHeight: calc(100vh * 0.12);
