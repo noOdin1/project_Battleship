@@ -28,6 +28,10 @@ class Gameboard {
   }
 
   buildBoards() {
+    // constants defined for board vertical and horizontal
+    //  squares
+    const boardVSq = 10;
+    const boardHSq = 10;
   }
 
   print_p1Board() {
