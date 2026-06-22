@@ -32,6 +32,8 @@ class Gameboard {
     //  squares
     const boardVSq = 10;
     const boardHSq = 10;
+    // create the board squares for player1 gameboard
+    for (let i = 0; i < boardVSq * boardHSq; i++) {
   }
 
   print_p1Board() {
