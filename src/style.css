@@ -22,6 +22,9 @@
   --mobile-width: 360px;
   --internalPadding: 2px;
   --fullViewableHeight: 100dvh;
+
+  --htmlBodyBGcolor: rgb(215, 215, 215);
+
   --bodyDivHeight: calc(100vh * 0.75);
   --headDivHeight: calc(100vh * 0.12);
   --footerDivHeight: calc(100vh * 0.12);
