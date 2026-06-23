@@ -38,8 +38,8 @@ class Gameboard {
     // create the board squares for player1 gameboard
     for (let i = 0; i < boardVSq * boardHSq; i++) {
       let boardsq1 = createButton(
-        ["square_" + i.toString(), "boardSq", "player1"],
-        "sqId_player1_" + i.toString(),
+        ["square_" + i.toString(), "boardSq", boardId],
+        "sqId_" + boardId + "_" + i.toString(),
       );
       document.getElementById("player1Board").append(boardsq1);
       this.p1Board.push([i, boardsq1]);
