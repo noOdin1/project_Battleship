@@ -33,6 +33,8 @@ class Gameboard {
     //  squares
     const boardVSq = 10;
     const boardHSq = 10;
+
+    const boardId = this.parentHtml.id.replace("Board", "");
     // create the board squares for player1 gameboard
     for (let i = 0; i < boardVSq * boardHSq; i++) {
       let boardsq1 = createButton(
