@@ -22,9 +22,10 @@ class Gameboard {
   constructor(parentHtml) {
     console.log("Initializing Gameboard class");
     this.p1bst = new Tree();
-    this.p2bst = new Tree();
+    // this.p2bst = new Tree();
     this.p1Board = [];
-    this.p2Board = [];
+    // this.p2Board = [];
+    this.parentHtml = parentHtml;
   }
 
   buildBoards() {
