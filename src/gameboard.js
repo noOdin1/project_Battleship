@@ -19,7 +19,7 @@ import { Tree } from "./binary_search_tree.js";
 import { buttonPressed } from "./interactions.js";
 
 class Gameboard {
-  constructor() {
+  constructor(parentHtml) {
     console.log("Initializing Gameboard class");
     this.p1bst = new Tree();
     this.p2bst = new Tree();

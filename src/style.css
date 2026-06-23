@@ -53,7 +53,7 @@ body {
 
   margin: auto;
   padding: var(--internalPadding);
-  border: 1px solid blue;
+  border: var(--debugBorder2);
 }
 
 #head {
