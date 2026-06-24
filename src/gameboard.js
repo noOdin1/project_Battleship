@@ -23,9 +23,7 @@ class Gameboard {
   constructor(parentHtml) {
     console.log("Initializing Gameboard class");
     this.p1bst = new Tree();
-    // this.p2bst = new Tree();
     this.p1Board = [];
-    // this.p2Board = [];
     this.parentHtml = parentHtml;
   }
 
@@ -40,39 +38,20 @@ class Gameboard {
     for (let i = 0; i < boardVSq * boardHSq; i++) {
       let boardsq1 = createButton(
         ["square_" + i.toString(), "boardSq", boardId],
-        "sqId_" + boardId + "_" + i.toString(),
       );
-      // document.getElementById("player1Board").append(boardsq1);
       this.parentHtml.append(boardsq1);
-      this.p1Board.push([i, "none", boardsq1]);
-      // let boardsq2 = createButton(
-      //   ["square_" + i.toString(), "boardSq", "player2"],
-      //   "sqId_player2_" + i.toString(),
-      // );
-      // document.getElementById("player2Board").append(boardsq2);
-      // this.p2Board.push([i, "none", boardsq2]);
-      boardsq1.addEventListener("click", buttonPressed);
-      // boardsq2.addEventListener("click", buttonPressed);
     }
     // We're using the 'alt' version as there is no need to
     // sort the arrays
     this.p1bst.buildTreeAlt(this.p1Board);
-    // this.p2bst.buildTreeAlt(this.p2Board);
   }
 
-  print_p1Board() {
-    console.dir(this.p1Board);
   }
 
-  print_p1bst() {
-    console.dir(this.p1bst.returnRoot());
   }
 
-  print_p2Board() {
-    console.dir(this.p2Board);
   }
 
-  receiveAttack() {}
 }
 
 export { Gameboard };
