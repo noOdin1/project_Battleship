@@ -16,6 +16,7 @@ import {
   htmlOps,
 } from "./element_creator.js";
 import { Tree } from "./binary_search_tree.js";
+import { LinkedList } from "./linked_list.js";
 import { buttonPressed } from "./interactions.js";
 
 class Gameboard {
