@@ -104,8 +104,12 @@ body {
   /* border: dodgerblue; */
 }
 
+/* styling the square when it registers a 'miss' */
+.marker.miss {
+  background: #000;
   width: var(--missRadius);
   height: var(--missRadius);
+  margin: auto;
   border-radius: 50%;
 }
 
