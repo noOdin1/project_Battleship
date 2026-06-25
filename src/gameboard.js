@@ -68,6 +68,39 @@ class Gameboard {
     return tmpNode;
   }
 
+  // receiveAttack() function to record the 'attack'
+  //  from the opposing side
+  receiveAttack(event) {
+    console.log("button [" + event.target.id + "] was pressed");
+    let index = event.target.id.substring(event.target.id.indexOf("-") + 1);
+    let tmpNode = this.get_node(index);
+    console.log(
+      "tmpNode head val: " +
+        tmpNode.val.head().val +
+        ", tmpNode string value: " +
+        tmpNode.val.valueAt(2) +
+        ", index: " +
+        index,
+    );
+    let tmpBtn = document.getElementById(event.target.id);
+
+    let tmpMarker = document.createElement("div");
+    // if the move is a 'miss'
+    if (tmpNode.val.valueAt(2) === "none") {
+      tmpMarker.classList.add("marker");
+      tmpMarker.classList.add("miss");
+    }
+    // if the move is a 'hit'
+    else {
+      tmpMarker.textContent = "X";
+      tmpMarker.classList.add("marker");
+      tmpMarker.classList.add("hit");
+      // code to inform the ship class that it receives a 'hit'
+    }
+
+    tmpBtn.append(tmpMarker);
+    tmpBtn.removeEventListener("click", this.receiveAttack);
+  }
 }
 
 export { Gameboard };
