@@ -18,6 +18,7 @@ import {
 import { Tree } from "./binary_search_tree.js";
 import { LinkedList } from "./linked_list.js";
 import { buttonPressed } from "./interactions.js";
+import { Ship } from "./ship.js";
 
 class Gameboard {
   constructor(parentHtml) {
