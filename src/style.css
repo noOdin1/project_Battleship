@@ -96,6 +96,14 @@ body {
   gap: 1px;
 }
 
+
+.boardSq {
+  width: var(--sqWidth);
+  height: var(--sqHeight);
+  border: var(--debugBorder1);
+  /* border: dodgerblue; */
+}
+
   width: var(--missRadius);
   height: var(--missRadius);
   border-radius: 50%;
