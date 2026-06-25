@@ -113,6 +113,18 @@ body {
   border-radius: 50%;
 }
 
+/* styling the square when it registers a 'hit' */
+.marker.hit {
+  background: red;
+  color: white;
+  width: calc(var(--sqWidth) - 4) px;
+  height: calc(var(--sqHeight) - 4) px;
+  margin: auto;
+  font-size: 1.2em;
+  font-weight: 900;
+  border: 1px solid black;
+}
+
 #footer {
   width: var(--mobile-width);
   height: var(--footerDivHeight);
