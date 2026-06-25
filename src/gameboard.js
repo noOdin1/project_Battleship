@@ -49,6 +49,9 @@ class Gameboard {
       tmpList.append(i);
       tmpList.append("none");
       tmpList.append(boardsq1);
+      this.p1Board.push(tmpList);
+
+      boardsq1.addEventListener("click", this.receiveAttack);
     }
     // We're using the 'alt' version as there is no need to
     // sort the arrays
