@@ -65,7 +65,7 @@ body {
 
   padding-left: auto;
   padding-right: auto;
-  border: var(--debugBorder);
+  border: var(--debugBorder1);
 }
 
 #mainTitle {
