@@ -83,6 +83,19 @@ body {
   margin-left: auto;
   margin-right: auto;
   border: var(--debugBorder);
+
+#player1Board,
+#player2Board {
+  width: var(--boardWidth);
+  height: var(--boardHeight);
+  border: var(--debugBorder1);
+
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: repeat(10, 1fr);
+  gap: 1px;
+}
+
   width: var(--missRadius);
   height: var(--missRadius);
   border-radius: 50%;
