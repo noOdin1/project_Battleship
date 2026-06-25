@@ -44,6 +44,11 @@ class Gameboard {
         "sqId_" + boardId + "-" + i.toString(),
       );
       this.parentHtml.append(boardsq1);
+      // create a linked list to store all info
+      let tmpList = new LinkedList();
+      tmpList.append(i);
+      tmpList.append("none");
+      tmpList.append(boardsq1);
     }
     // We're using the 'alt' version as there is no need to
     // sort the arrays
