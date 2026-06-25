@@ -41,6 +41,7 @@ class Gameboard {
     for (let i = 0; i < boardVSq * boardHSq; i++) {
       let boardsq1 = createButton(
         ["square_" + i.toString(), "boardSq", boardId],
+        "sqId_" + boardId + "-" + i.toString(),
       );
       this.parentHtml.append(boardsq1);
     }
