@@ -20,6 +20,8 @@ import { LinkedList } from "./linked_list.js";
 import { buttonPressed } from "./interactions.js";
 import { Ship } from "./ship.js";
 
+const boardWidth = 10;
+
 class Gameboard {
   constructor(parentHtml) {
     console.log("Initializing Gameboard class");
