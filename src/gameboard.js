@@ -62,6 +62,10 @@ class Gameboard {
 
   }
 
+  get_node(value) {
+    // Have to use the modifications made during "knight travails" project
+    let tmpNode = this.p1bst.findAlt(parseInt(value, 10));
+    return tmpNode;
   }
 
 }
