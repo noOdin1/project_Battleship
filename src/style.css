@@ -26,9 +26,9 @@
   --htmlBodyBGcolor: rgb(215, 215, 215);
 
   /* div dimensions */
-  --bodyDivHeight: calc(100vh * 0.75);
-  --headDivHeight: calc(100vh * 0.12);
-  --footerDivHeight: calc(100vh * 0.12);
+  --bodyDivHeight: calc(100vh * 0.7);
+  --headDivHeight: calc(100vh * 0.08);
+  --footerDivHeight: calc(100vh * 0.15);
 
   /* css debug borders */
   --debugBorder1: 1px solid MediumVioletRed;
