@@ -90,16 +90,29 @@ body {
   justify-content: space-between;
 }
 
-#player1Board,
+/* #player1Board, */
 #player2Board {
   width: var(--boardWidth);
   height: var(--boardHeight);
-  border: var(--debugBorder1);
 
   display: grid;
   grid-template-columns: repeat(10, 1fr);
   grid-template-rows: repeat(10, 1fr);
   gap: 1px;
+
+  border: var(--debugBorder1);
+}
+
+#player1Board {
+  width: var(--boardWidth);
+  height: var(--boardHeight);
+
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: repeat(10, 1fr);
+  gap: 1px;
+
+  border: var(--debugBorder1);
 }
 
 
