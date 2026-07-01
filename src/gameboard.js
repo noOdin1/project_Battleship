@@ -39,10 +39,19 @@ class Gameboard {
     const boardId = this.parentHtml.id.replace("Board", "");
     // create the board squares for player1 gameboard
     for (let i = 0; i < boardVSq * boardHSq; i++) {
-      let boardsq1 = createButton(
-        ["square_" + i.toString(), "boardSq", boardId],
-        "sqId_" + boardId + "-" + i.toString(),
-      );
+      let boardsq1;
+      if (boardId === "player2") {
+        boardsq1 = createButton(
+          ["square_" + i.toString(), "boardSq", boardId],
+          "sqId_" + boardId + "-" + i.toString(),
+        );
+        boardsq1.addEventListener("click", this.receiveAttack);
+      } else {
+        boardsq1 = createDiv(
+          ["square_" + i.toString(), "boardSq", boardId],
+          "sqId_" + boardId + "-" + i.toString(),
+        );
+      }
       this.parentHtml.append(boardsq1);
       // create a linked list to store all info
       let tmpList = new LinkedList();
