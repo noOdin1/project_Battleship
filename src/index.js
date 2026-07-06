@@ -4,6 +4,18 @@ import { Player } from "./player.js";
 import { Gameboard } from "./gameboard.js";
 import { Ship, shipDim, shipCount } from "./ship.js";
 
+const num2Array = (x) => {
+  x = Number(x);
+  let row = Math.floor(x / 10);
+  let col = x % 10;
+  return [row, col];
+};
+const array2Num = (arr) => {
+  let rows = arr[0];
+  let cols = arr[1];
+  return 10 * rows + cols;
+};
+
 // function gameRound() {
 (() => {
   // board dimensions and mapping
