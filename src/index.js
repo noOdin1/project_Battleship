@@ -60,6 +60,8 @@ const array2Num = (arr) => {
   let dragItemDim;
   let dragBlock; /* This represent the block that the cursor clicked on */
   function placement() {}
+  const dragStarted = (e) => {
+  };
 
   function round() {}
 
