@@ -63,6 +63,19 @@ const array2Num = (arr) => {
   const dragStarted = (e) => {
     isDragging = true;
     e.target.classList.add("dragging");
+    // offsetX = e.clientX - e.target.offsetLeft;
+    // offsetY = e.clientY - e.target.offsetTop;
+    const rect = e.target.getBoundingClientRect();
+    offsetX = e.clientX - rect.left;
+    offsetY = e.clientY - rect.top;
+    // NOTE:
+    //  event (or in this case 'e') with it's offset represents
+    //  the cursor's location when it is clicked within this
+    //  element, wrt top left corner
+    let tmpX = Math.floor(e.offsetX / 24) + 1;
+    let tmpY = Math.floor(e.offsetY / 24) + 1;
+    xCoor.textContent = "x block: " + tmpX;
+    yCoor.textContent = "y block: " + tmpY;
   };
 
   function round() {}
