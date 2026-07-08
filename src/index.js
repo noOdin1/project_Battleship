@@ -41,6 +41,11 @@ const array2Num = (arr) => {
   let player = new Player();
 
   let box = p1gb.get_parentHtml().getBoundingClientRect();
+  let p1gbLeft = box.left;
+  let p1gbTop = box.top;
+  let p1gbBottom = box.bottom;
+  let p1gbRight = box.right;
+
   function placement() {}
 
   function round() {}
