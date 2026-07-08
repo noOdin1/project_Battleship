@@ -46,6 +46,7 @@ const array2Num = (arr) => {
   let p1gbBottom = box.bottom;
   let p1gbRight = box.right;
 
+  let player1Ships = [];
   function placement() {}
 
   function round() {}
