@@ -76,6 +76,9 @@ const array2Num = (arr) => {
     let tmpY = Math.floor(e.offsetY / 24) + 1;
     xCoor.textContent = "x block: " + tmpX;
     yCoor.textContent = "y block: " + tmpY;
+    dragBlock = e.target.getAttribute("class").includes("row") ? tmpX : tmpY;
+    dragBlock -= 1;
+
   };
 
   function round() {}
