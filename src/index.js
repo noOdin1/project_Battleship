@@ -60,6 +60,16 @@ const array2Num = (arr) => {
   let dragItemDim;
   let dragBlock; /* This represent the block that the cursor clicked on */
   function placement() {}
+  const boardSquares = document.querySelectorAll(".boardSq.player1");
+  boardSquares.forEach((sq) => {
+    sq.addEventListener("drop", (e) => {
+      dropTarget = e.target.id;
+    });
+    sq.addEventListener("dragOver", (e) => {
+      console.log("square id: " + e.target.id);
+    });
+  });
+
   const dragStarted = (e) => {
     isDragging = true;
     e.target.classList.add("dragging");
