@@ -62,6 +62,7 @@ const array2Num = (arr) => {
   function placement() {}
   const dragStarted = (e) => {
     isDragging = true;
+    e.target.classList.add("dragging");
   };
 
   function round() {}
