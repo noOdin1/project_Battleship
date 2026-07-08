@@ -3,6 +3,21 @@ import "./style.css";
 import { Player } from "./player.js";
 import { Gameboard } from "./gameboard.js";
 import { Ship, shipDim, shipCount } from "./ship.js";
+import {
+  createP,
+  createA,
+  createDiv,
+  createButton,
+  createImg,
+  createForm,
+  createFieldset,
+  createLegend,
+  createLabel,
+  createInput,
+  createSelect,
+  createOption,
+  htmlOps,
+} from "./element_creator.js";
 
 const num2Array = (x) => {
   x = Number(x);
