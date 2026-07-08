@@ -79,6 +79,7 @@ const array2Num = (arr) => {
     dragBlock = e.target.getAttribute("class").includes("row") ? tmpX : tmpY;
     dragBlock -= 1;
 
+    dragItemDim = e.target.getBoundingClientRect();
   };
 
   function round() {}
