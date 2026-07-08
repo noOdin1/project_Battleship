@@ -40,6 +40,7 @@ const array2Num = (arr) => {
   let p2gb = new Gameboard(document.getElementById("player2Board"));
   let player = new Player();
 
+  let box = p1gb.get_parentHtml().getBoundingClientRect();
   function placement() {}
 
   function round() {}
