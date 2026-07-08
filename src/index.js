@@ -51,6 +51,14 @@ const array2Num = (arr) => {
   p1gb.buildBoards();
   p2gb.buildBoards();
 
+  let offsetX = 0;
+  let offsetY = 0;
+  let mouseX = 0;
+  let mouseY = 0;
+  let isDragging = false;
+  let dropTarget;
+  let dragItemDim;
+  let dragBlock; /* This represent the block that the cursor clicked on */
   function placement() {}
 
   function round() {}
