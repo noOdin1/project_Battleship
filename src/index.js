@@ -47,6 +47,10 @@ const array2Num = (arr) => {
   let p1gbRight = box.right;
 
   let player1Ships = [];
+
+  p1gb.buildBoards();
+  p2gb.buildBoards();
+
   function placement() {}
 
   function round() {}
