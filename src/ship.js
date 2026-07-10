@@ -55,6 +55,15 @@ class Ship {
     return found;
   }
 
+  isSunk() {
+    let sunk = true;
+    this.blocks.forEach((x) => {
+      if (x[1] === "none") {
+        sunk = false;
+      }
+    });
+    return sunk;
+  }
 }
 
 export { Ship };
