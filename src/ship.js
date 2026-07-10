@@ -24,8 +24,16 @@ class Ship {
     }
   }
 
-  getPos() {
-    return this.pos;
+  setBlocks(arr) {
+    if (Array.isArray(arr)) {
+      this.blocks = arr.map((x) => [parseInt(x, 10), "none"]);
+      return;
+    }
+    throw new Error(`Error setting ${this.name} blocks`);
+  }
+
+  getBlocks() {
+    return this.blocks;
   }
 
   getName() {
