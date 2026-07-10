@@ -32,4 +32,4 @@ This project focuses on recreating the Battleship game. There are a few variatio
 | &emsp;&emsp;- There must be a condition check to see if any sides have<br>&emsp;&emsp;&ensp;&nbsp;lost all their ships, and end the game by declaring the winner.<br>                                                                    | [in progress] :hourglass_flowing_sand: |
 | 5. Finish the project by implementing a system that allows the players<br>&emsp;to place their ships. <br>                                                                                    | [in progress] :hourglass_flowing_sand: |
 
-- [Project Objectives](https://www.theodinproject.com/lessons/node-path-javascript-battleship)
+- [The Odin Project: Project Battleship Objectives page](https://www.theodinproject.com/lessons/node-path-javascript-battleship)
