@@ -10,6 +10,8 @@ const shipDim = {
 const shipCount = { battleship: 1, cruiser: 2, destroyer: 3, patrolBoat: 4 };
 
 class Ship {
+  const sqNum = 0;
+  const status = 1;
   constructor(name = undefined, blocks = undefined) {
     this.name = name;
     if (blocks != undefined) {
