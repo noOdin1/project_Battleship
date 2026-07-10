@@ -66,4 +66,4 @@ class Ship {
   }
 }
 
-export { Ship };
+export { Ship, shipDim, shipCount };
