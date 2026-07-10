@@ -10,10 +10,18 @@ const shipDim = {
 const shipCount = { battleship: 1, cruiser: 2, destroyer: 3, patrolBoat: 4 };
 
 class Ship {
-  constructor(pos, name) {
-    console.log("Initializing Ship class");
-    this.pos = JSON.parse(JSON.stringify(pos));
+  constructor(name = undefined, blocks = undefined) {
     this.name = name;
+    if (blocks != undefined) {
+      this.blocks = [];
+      if (Array.isArray(blocks)) {
+        blocks.forEach((x) => {
+          this.blocks.push([parseInt(x, 10), "none"]);
+        });
+      } else {
+        throw new Error("Error assigning square numbers to ship array");
+      }
+    }
   }
 
   getPos() {
