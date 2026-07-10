@@ -36,6 +36,10 @@ class Ship {
     return this.blocks;
   }
 
+  setName(name) {
+    this.name = name;
+  }
+
   getName() {
     return this.name;
   }
