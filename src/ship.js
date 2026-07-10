@@ -50,8 +50,8 @@ class Ship {
   hit(pos) {
     let found = false;
     this.blocks.forEach((x) => {
-      if (pos === x[0]) {
-        x[1] = "hit";
+      if (pos === x[sqNum]) {
+        x[status] = "hit";
         found = true;
       }
     });
@@ -61,7 +61,7 @@ class Ship {
   isSunk() {
     let sunk = true;
     this.blocks.forEach((x) => {
-      if (x[1] === "none") {
+      if (x[status] === "none") {
         sunk = false;
       }
     });
