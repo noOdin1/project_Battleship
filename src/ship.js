@@ -44,8 +44,17 @@ class Ship {
     return this.name;
   }
 
-  hit() {}
-  isSunk() {}
+  hit(pos) {
+    let found = false;
+    this.blocks.forEach((x) => {
+      if (pos === x[0]) {
+        x[1] = "hit";
+        found = true;
+      }
+    });
+    return found;
+  }
+
 }
 
 export { Ship };
