@@ -24,4 +24,9 @@ describe("Test for ship class", () => {
   test("Constructor test04, ship name and object of coordinates supplied [Error expected]", () => {
     expect(() => (shipTest01 = new Ship("battleship01", {}))).toThrow("Error");
   });
+
+  test("setBlocks() tests01, passing in non-array into the function [Error expected]", () => {
+    shipTest01 = new Ship();
+    expect(() => shipTest01.setBlocks({})).toThrow("Error");
+  });
 });
