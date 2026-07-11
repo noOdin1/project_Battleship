@@ -29,4 +29,19 @@ describe("Test for ship class", () => {
     shipTest01 = new Ship();
     expect(() => shipTest01.setBlocks({})).toThrow("Error");
   });
+  test('getBlocks() tests01, getting array that represents the ship block coordinate, expect [[2, "none" ]] ', () => {
+    shipTest01 = new Ship();
+    shipTest01.setBlocks([2]);
+    expect(shipTest01.getBlocks()).toEqual([[2, "none"]]);
+  });
+  test('getBlocks() tests02, getting array that represents the ship block coordinate, expect [[2, "none" ], [12, "none"], [22, "none"]] ', () => {
+    shipTest01 = new Ship();
+    shipTest01.setBlocks([2, 12, 22]);
+    expect(shipTest01.getBlocks()).toEqual([
+      [2, "none"],
+      [12, "none"],
+      [22, "none"],
+    ]);
+  });
+
 });
