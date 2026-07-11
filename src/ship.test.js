@@ -56,4 +56,18 @@ describe("Test for ship class", () => {
     expect(shipTest01.getName()).toEqual("cruiser02");
   });
 
+  test("hit(pos) test01, testing with 2 ship blocks and miss condition", () => {
+    shipTest01 = new Ship("destroyer03", [47, 48]);
+    expect(shipTest01.hit(23)).toEqual(false);
+  });
+  test("hit(pos) test02, testing with 2 ship blocks and 1 hit condition", () => {
+    shipTest01 = new Ship("destroyer03", [47, 48]);
+    expect(shipTest01.hit(48)).toEqual(true);
+  });
+  test("hit(pos) test03, testing with 2 ship blocks and 2 hit condition", () => {
+    shipTest01 = new Ship("destroyer03", [47, 48]);
+    expect(shipTest01.hit(47)).toEqual(true);
+    expect(shipTest01.hit(48)).toEqual(true);
+  });
+
 });
