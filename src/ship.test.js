@@ -44,4 +44,16 @@ describe("Test for ship class", () => {
     ]);
   });
 
+  test("setName() and getName() test01, setting the name for the ship", () => {
+    shipTest01 = new Ship();
+    shipTest01.setName("cruiser02");
+    expect(shipTest01.getName()).toEqual("cruiser02");
+  });
+  test("setName() and getName() test02, setting the name for the ship", () => {
+    shipTest01 = new Ship();
+    shipTest01.setBlocks([5, 15, 25]);
+    shipTest01.setName("cruiser02");
+    expect(shipTest01.getName()).toEqual("cruiser02");
+  });
+
 });
