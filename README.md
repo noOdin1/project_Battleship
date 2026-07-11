@@ -12,10 +12,10 @@ This project focuses on recreating the Battleship game. There are a few variatio
 | Project Objectives                                                                                                            |          status           |
 | ----------------------------------------------------------------------------------------------------------------------------- | :-----------------------: |
 | 1. ship Class/factory function to represent each ship<br>                                                                    | [done] :white_check_mark: |
-| &emsp;&emsp;- Create tests for ship class/factory, public interface only<br>                                                                    | [in progress] :hourglass_flowing_sand: |
-| &emsp;&emsp;- hit() function for ship class/factory<br>                                                                    | [in progress] :hourglass_flowing_sand: |
-| &emsp;&emsp;- isSunk() function to check if the ship is sunk, this is determined by<br>&emsp;&emsp;&ensp;&nbsp;the length and number of 'hits' the ship has taken<br>                                                                    | [in progress] :hourglass_flowing_sand: |
-| 2. Create a class/factory called Gameboard<br>                                                                                    | [in progress] :hourglass_flowing_sand: |
+| &emsp;&emsp;- Create tests for ship class/factory, public interface only<br>                                                                    | [done] :white_check_mark: |
+| &emsp;&emsp;- hit() function for ship class/factory<br>                                                                    | [done] :white_check_mark: |
+| &emsp;&emsp;- isSunk() function to check if the ship is sunk, this is determined by<br>&emsp;&emsp;&ensp;&nbsp;the length and number of 'hits' the ship has taken<br>                                                                    | [done] :white_check_mark: |
+| 2. Create a class/factory called Gameboard<br>                                                                                    | [done] :white_check_mark: |
 | &emsp;&emsp;- Gameboards calls the Ship class/factory to place ships at specific<br>&emsp;&emsp;&ensp;&nbsp; coordinates<br>                                                                    | [in progress] :hourglass_flowing_sand: |
 | &emsp;&emsp;- A receiveAttack() function for Gameboards to determine if the attack<br>&emsp;&emsp;&ensp;&nbsp;does score a hit or not. This will then sends a 'hit' function to the<br>&emsp;&emsp;&ensp;&nbsp;appropriate ship. If there's no hit then record it as a miss.<br>                                                                    | [in progress] :hourglass_flowing_sand: |
 | &emsp;&emsp;- Keep track of missed attacks, for display/report.<br>&emsp;&emsp;&ensp;&nbsp;<br>                                                                    | [in progress] :hourglass_flowing_sand: |
