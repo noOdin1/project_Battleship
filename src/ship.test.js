@@ -70,4 +70,27 @@ describe("Test for ship class", () => {
     expect(shipTest01.hit(48)).toEqual(true);
   });
 
+  test("isSunk() test01, testing when 0 ship block of 2 has hit condition", () => {
+    shipTest01 = new Ship("destroyer01", [55, 65]);
+    expect(shipTest01.isSunk()).toEqual(false);
+  });
+  test("isSunk() test02, testing when 1 ship block of 2 has hit condition", () => {
+    shipTest01 = new Ship("destroyer01", [55, 65]);
+    shipTest01.hit(55);
+    expect(shipTest01.isSunk()).toEqual(false);
+    expect(shipTest01.getBlocks()).toEqual([
+      [55, "hit"],
+      [65, "none"],
+    ]);
+  });
+  test("isSunk() test03, testing when 2 ship block of 2 has hit condition", () => {
+    shipTest01 = new Ship("destroyer01", [55, 65]);
+    shipTest01.hit(55);
+    shipTest01.hit(65);
+    expect(shipTest01.isSunk()).toEqual(true);
+    expect(shipTest01.getBlocks()).toEqual([
+      [55, "hit"],
+      [65, "hit"],
+    ]);
+  });
 });
