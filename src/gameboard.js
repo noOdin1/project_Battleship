@@ -1,5 +1,4 @@
 /* gameboard.js */
-import { createElement } from "./element_creator.js";
 import {
   createP,
   createA,
@@ -19,8 +18,6 @@ import { Tree } from "./binary_search_tree.js";
 import { LinkedList } from "./linked_list.js";
 import { buttonPressed } from "./interactions.js";
 import { Ship } from "./ship.js";
-
-const boardWidth = 10;
 
 class Gameboard {
   constructor(parentHtml) {
