@@ -210,15 +210,16 @@ class Tree {
   }
 
   // findAlt() for knightTravails
-  findAlt(value, node = this.rootNode) {
+  findAlt(value, key, node = this.rootNode) {
     if (node === null) return;
 
-    if (node.val.head().val === value) {
+    // if (node.val.head().val === value) {
+    if (node.val[key] === value) {
       return node;
     }
-    let tmpRes = this.findAlt(value, node.leftNode);
+    let tmpRes = this.findAlt(value, key, node.leftNode);
     if (tmpRes == undefined) {
-      tmpRes = this.findAlt(value, node.rightNode);
+      tmpRes = this.findAlt(value, key, node.rightNode);
     }
     return tmpRes;
   }
