@@ -20,6 +20,18 @@ import { buttonPressed } from "./interactions.js";
 import { Ship } from "./ship.js";
 
 class Gameboard {
+  // NOTE:
+  // This is how you create a 'const' inside a class
+  static get sqNum() {
+    return 0;
+  }
+  static get status() {
+    return 1;
+  }
+  static get boardWidth() {
+    return 10;
+  }
+
   constructor(parentHtml) {
     console.log("Initializing Gameboard class");
     this.p1bst = new Tree();
