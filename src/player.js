@@ -12,9 +12,28 @@ const shipDim = {
 const shipCount = { battleship: 1, cruiser: 2, destroyer: 3, patrolBoat: 4 };
 
 class Player {
-  constructor() {
+  constructor(playerName, parentHtml) {
     console.log("Initializing Player class");
+
+    // Player identifier
+    this.playerName = playerName;
+
+    // create the ship fleet for this player
+    this.ships = [];
+    Object.keys(shipDim).forEach((x) => {
+      for (let i = 1; i <= shipCount[x]; i++) {
+        let tmpShip = new Ship(`${x}0${i}`);
+        this.ships.push(tmpShip);
+      }
+    });
+    // console.dir(this.ships);
+    this.ships.forEach((x) => console.log(x.getName()));
+
+    // gameboard creation
+    this.gameboard = new Gameboard(playerName, parentHtml);
+    this.gameboard.createBoard();
   }
+
 }
 
 export { Player, shipDim, shipCount };
