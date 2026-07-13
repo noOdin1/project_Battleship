@@ -90,6 +90,8 @@ class Gameboard {
     });
   }
 
+  getRootNode() {
+    return this.bst.returnRoot();
   }
 
   node(value) {
