@@ -63,37 +63,6 @@ class Gameboard {
     this.parentHtml = parentHtml;
   }
 
-  buildBoards() {
-    // constants defined for board vertical and horizontal
-    //  squares
-    const boardVSq = 10;
-    const boardHSq = 10;
-
-    const boardId = this.parentHtml.id.replace("Board", "");
-    // create the board squares for player1 gameboard
-    for (let i = 0; i < boardVSq * boardHSq; i++) {
-      let boardsq1;
-      if (boardId === "player2") {
-        boardsq1 = createButton(
-          ["square_" + i.toString(), "boardSq", boardId],
-          "sqId_" + boardId + "-" + i.toString(),
-        );
-        boardsq1.addEventListener("click", this.receiveAttack);
-      } else {
-        boardsq1 = createDiv(
-          ["square_" + i.toString(), "boardSq", boardId],
-          "sqId_" + boardId + "-" + i.toString(),
-        );
-      }
-      this.parentHtml.append(boardsq1);
-      // create a linked list to store all info
-      let tmpList = new LinkedList();
-      tmpList.append(i);
-      tmpList.append("none");
-      tmpList.append(boardsq1);
-      this.p1Board.push(tmpList);
-
-      boardsq1.addEventListener("click", this.receiveAttack);
     }
     // We're using the 'alt' version as there is no need to
     // sort the arrays
