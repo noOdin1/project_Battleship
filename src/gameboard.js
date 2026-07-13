@@ -22,14 +22,26 @@ import { Ship } from "./ship.js";
 class Gameboard {
   // NOTE:
   // This is how you create a 'const' inside a class
-  static get sqNum() {
+  static get sqNumIndex() {
     return 0;
   }
-  static get status() {
+  static get statusIndex() {
     return 1;
   }
   static get boardWidth() {
     return 10;
+  }
+  static get squareNumber() {
+    return "sqNum";
+  }
+  static get shipId() {
+    return "shipName";
+  }
+  static get shipStatus() {
+    return "status";
+  }
+  static get shipDiv() {
+    return "div";
   }
 
   constructor(parentHtml) {
