@@ -65,10 +65,22 @@ class Gameboard {
     this.parentHtml = parentHtml;
   }
 
+  createBoard() {
+    let tmpArray = [];
+    for (let i = 0; i < Gameboard.boardWidth ** 2; i++) {
+      let boardsq = createDiv(
+        ["square_" + i.toString(), "boardSq", this.playerId],
+        "sqId_" + this.playerId + "-" + i.toString(),
+      );
+      tmpArray.push({
+        sqNum: i,
+        shipName: "none",
+        status: "none",
+        div: boardsq,
+      });
+      this.parentHtml.append(boardsq);
     }
-    // We're using the 'alt' version as there is no need to
-    // sort the arrays
-    this.p1bst.buildTreeAlt(this.p1Board);
+    this.bst.buildTreeAlt(tmpArray);
   }
 
   // function to test placement
