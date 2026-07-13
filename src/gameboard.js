@@ -109,10 +109,9 @@ class Gameboard {
 
   }
 
-  get_node(value) {
+  node(value) {
     // Have to use the modifications made during "knight travails" project
-    let tmpNode = this.p1bst.findAlt(parseInt(value, 10));
-    return tmpNode;
+    return this.bst.findAlt(parseInt(value, 10), Gameboard.squareNumber);
   }
 
   // receiveAttack() function to record the 'attack'
