@@ -44,10 +44,22 @@ class Gameboard {
     return "div";
   }
 
-  constructor(parentHtml) {
+  constructor(playerId, parentHtml = undefined) {
     console.log("Initializing Gameboard class");
-    this.p1bst = new Tree();
-    this.p1Board = [];
+    this.bst = new Tree();
+    this.board = [];
+    this.playerId = playerId;
+    if (parentHtml != undefined) {
+      this.parentHtml = parentHtml;
+    }
+
+    // This requires a bit of attention, as 'this' with an event listener
+    //  is bound to the html and not to this class. The following line will
+    //   bind this.receiveAttack() to 'this' class.
+    // src:
+    //  Google'd solution - "javascript a callback used as event listener cannot access class variables"
+    this.receiveAttack = this.receiveAttack.bind(this);
+  }
     this.parentHtml = parentHtml;
   }
 
