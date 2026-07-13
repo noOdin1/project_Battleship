@@ -60,6 +60,8 @@ class Gameboard {
     //  Google'd solution - "javascript a callback used as event listener cannot access class variables"
     this.receiveAttack = this.receiveAttack.bind(this);
   }
+
+  setParentHTML(parentHtml) {
     this.parentHtml = parentHtml;
   }
 
@@ -93,6 +95,10 @@ class Gameboard {
   node(value) {
     // Have to use the modifications made during "knight travails" project
     return this.bst.findAlt(parseInt(value, 10), Gameboard.squareNumber);
+  }
+
+  getParentHtml() {
+    return this.parentHtml;
   }
 
   // receiveAttack() function to record the 'attack'
