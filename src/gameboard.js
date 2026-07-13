@@ -83,22 +83,10 @@ class Gameboard {
     this.bst.buildTreeAlt(tmpArray);
   }
 
-  // function to test placement
-  placeShip(ship) {
-    let tmpPos = JSON.parse(JSON.stringify(ship.getPos()));
-    let shipLength = tmpPos.length;
-    const shipWidth = 2;
-    let square = [];
-
-    for (let i = 0; i < shipLength; i++) {
-      console.log("coordinate: " + tmpPos[i]);
-      let tmpArray = tmpPos[i];
-      square.push(tmpArray[0] * boardWidth + tmpArray[1]);
-    }
-    console.dir(square);
-    square.forEach((x) => {
-      let tmpNode = this.p1bst.findAlt(x);
-      tmpNode.val.changeValueAt(2, ship.getName());
+  place(ship) {
+    ship.getBlocks().forEach((x) => {
+      let tmpNode = this.node(x[Gameboard.sqNumIndex]);
+      tmpNode.val[Gameboard.shipId] = ship.getName();
     });
   }
 
