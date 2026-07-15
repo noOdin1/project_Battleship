@@ -30,6 +30,9 @@ class Player {
     this.gameboard.createBoard();
   }
 
+  place(shipName, arrayBlocks) {
+  }
+
   setParentHtml(parentHtml) {
     this.gameboard.setParentHTML(parentHtml);
   }
