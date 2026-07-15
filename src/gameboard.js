@@ -16,7 +16,6 @@ import {
 } from "./element_creator.js";
 import { Tree } from "./binary_search_tree.js";
 import { LinkedList } from "./linked_list.js";
-import { buttonPressed } from "./interactions.js";
 import { Ship } from "./ship.js";
 
 class Gameboard {
@@ -45,7 +44,6 @@ class Gameboard {
   }
 
   constructor(playerId, parentHtml = undefined) {
-    console.log("Initializing Gameboard class");
     this.bst = new Tree();
     this.board = [];
     this.playerId = playerId;
