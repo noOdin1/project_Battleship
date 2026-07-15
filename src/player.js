@@ -37,6 +37,10 @@ class Player {
   getParentHtml() {
     return this.gameboard.getParentHtml();
   }
+
+  getGameboard() {
+    return this.gameboard;
+  }
 }
 
 export { Player, shipDim, shipCount };
