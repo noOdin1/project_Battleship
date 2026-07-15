@@ -41,6 +41,10 @@ class Player {
   getGameboard() {
     return this.gameboard;
   }
+
+  getShips() {
+    return this.ships;
+  }
 }
 
 export { Player, shipDim, shipCount };
