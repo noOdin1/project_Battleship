@@ -13,8 +13,6 @@ const shipCount = { battleship: 1, cruiser: 2, destroyer: 3, patrolBoat: 4 };
 
 class Player {
   constructor(playerName, parentHtml) {
-    console.log("Initializing Player class");
-
     // Player identifier
     this.playerName = playerName;
 
@@ -26,8 +24,6 @@ class Player {
         this.ships.push(tmpShip);
       }
     });
-    // console.dir(this.ships);
-    this.ships.forEach((x) => console.log(x.getName()));
 
     // gameboard creation
     this.gameboard = new Gameboard(playerName, parentHtml);
