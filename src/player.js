@@ -31,6 +31,10 @@ class Player {
   }
 
   place(shipName, arrayBlocks) {
+    let shipFound = false;
+
+
+    return shipFound;
   }
 
   setParentHtml(parentHtml) {
