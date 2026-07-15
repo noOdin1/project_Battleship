@@ -33,6 +33,21 @@ class Player {
   place(shipName, arrayBlocks) {
     let shipFound = false;
 
+    this.ships.forEach((x) => {
+      if (x["name"] == shipName) {
+        // console.log(
+        //   `shipName: ${shipName}, arrayBlocks: ${JSON.stringify(arrayBlocks)}, x: ${x["name"]},
+        //    ships: ${JSON.stringify(this.ships)}, blocks: ${JSON.stringify(x["blocks"])}`,
+        // );
+        x.setBlocks(arrayBlocks);
+        shipFound = true;
+        arrayBlocks.forEach((y) => {
+          let tmpNode = this.gameboard.node(y);
+          tmpNode.val[Gameboard.shipId] = x["name"];
+          tmpNode.val[Gameboard.shipDiv].classList.add(x["name"]);
+        });
+      }
+    });
 
     return shipFound;
   }
