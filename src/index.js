@@ -1,8 +1,8 @@
 /* index.js */
 import "./style.css";
-import { Player } from "./player.js";
+import { Player, shipDim, shipCount } from "./player.js";
 import { Gameboard } from "./gameboard.js";
-import { Ship, shipDim, shipCount } from "./ship.js";
+import { Ship } from "./ship.js";
 import {
   createP,
   createA,
