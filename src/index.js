@@ -32,7 +32,7 @@ const array2Num = (arr) => {
 };
 
 // function gameRound() {
-(() => {
+(() => { // Immediately Invoked Function Expression (IIFE)
   // board dimensions and mapping
   const boardWidth = 10;
   const boardHeight = 10;
