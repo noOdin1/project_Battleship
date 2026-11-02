@@ -19,17 +19,8 @@ import {
   htmlOps,
 } from "./element_creator.js";
 
-const num2Array = (x) => {
-  x = Number(x);
-  let row = Math.floor(x / 10);
-  let col = x % 10;
-  return [row, col];
-};
-const array2Num = (arr) => {
-  let rows = arr[0];
-  let cols = arr[1];
-  return 10 * rows + cols;
-};
+const num2Array = x => [Math.floor(x / 10), (x % 10)];
+const array2Num = arr => 10 * (arr[0], arr[1]);
 
 // function gameRound() {
 (() => { // Immediately Invoked Function Expression (IIFE)
