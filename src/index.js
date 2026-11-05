@@ -20,7 +20,7 @@ import {
 } from "./element_creator.js";
 
 const num2Array = x => [Math.floor(x / 10), (x % 10)];
-const array2Num = arr => 10 * (arr[0], arr[1]);
+const array2Num = arr => (10 * arr[1]) + arr[0];
 
 // function gameRound() {
 (() => { // Immediately Invoked Function Expression (IIFE)
