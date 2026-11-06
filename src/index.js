@@ -59,6 +59,19 @@ const array2Num = arr => (10 * arr[1]) + arr[0];
     sq.addEventListener("dragOver", (e) => {
       console.log("square id: " + e.target.id);
     });
+    // function to handle touch screen devices. Users click on the ship and
+    // then the square on the board where they want to place it.
+    sq.addEventListener("click", (e) => {
+      let tmpFocusedShip = document.getElementsByClassName("currentClickFocus");
+      if (!tmpFocusedShip.length == 0) {
+        let shipOrientation = tmpFocusedShip[0].classList.contains("row") ? "row" : "column";
+        dragBlock = 0;
+        let tmpRes = placeShip(tmpFocusedShip[0].id, e.target.id.replace("sqId_player1-", ""), shipOrientation);
+        if (tmpRes !== undefined && player1.place(tmpFocusedShip[0].id, tmpRes)) {
+          tmpFocusedShip[0].remove();
+        }
+      }
+    });
   });
 
   const dragStarted = (e) => {
