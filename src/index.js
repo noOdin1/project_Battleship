@@ -68,6 +68,7 @@ const array2Num = arr => (10 * arr[1]) + arr[0];
   window.addEventListener("mousedown", mouseAction);
   window.addEventListener("mouseup", mouseAction);
 
+  // Adding EventListeners to each boardSq of player1
   const boardSquares = document.querySelectorAll(".boardSq.player1");
   boardSquares.forEach((sq) => {
     sq.addEventListener("drop", (e) => {
