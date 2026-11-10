@@ -51,6 +51,7 @@ const array2Num = arr => (10 * arr[1]) + arr[0];
   let dragItemDim;
   let dragBlock; /* This represent the block that the cursor clicked on */
 
+  const draggables = document.querySelectorAll(".draggable");
   const boardSquares = document.querySelectorAll(".boardSq.player1");
   boardSquares.forEach((sq) => {
     sq.addEventListener("drop", (e) => {
