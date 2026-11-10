@@ -114,6 +114,24 @@ const array2Num = arr => (10 * arr[1]) + arr[0];
     dragItemDim = e.target.getBoundingClientRect();
   };
 
+  const validatePlacing = (arr) => {
+    let collision = false;
+
+    if (placementTurn === "player1") {
+      let tmpGameboard = player1.getGameboard();
+      arr.forEach((x) => {
+        let tmpNode = tmpGameboard.node(x);
+        Object.keys(shipDim).forEach((x) => {
+          let classList = tmpNode.val[Gameboard.shipDiv].classList.value;
+          if (classList.includes(x) || classList.includes("invalid")) {
+            console.log(`This square is occupied`);
+            collision = true;
+          }
+        });
+      });
+    }
+    return collision;
+  };
 
   return { placement, round };
 })();
