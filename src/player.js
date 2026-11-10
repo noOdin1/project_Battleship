@@ -1,6 +1,7 @@
 /* player.js */
 import { Gameboard } from "./gameboard.js";
 import { Ship } from "./ship.js";
+import { num2Array, array2Num } from "./index.js";
 
 const shipDim = {
   battleship: 4,
