@@ -371,6 +371,37 @@ const array2Num = arr => (10 * arr[1]) + arr[0];
     y.textContent = "mouse y: " + `${e.pageY}`;
   });
 
+  // The click on each ship will change it's orientation. But I need to 
+  // add another functionality. 
+  // NOTE: 
+  // The functionality will be to mark the ship for placement. Once marked
+  // and the user clicks on the board square, that will be the placement for
+  // the ship. This is necessary to handle touch screen devices. 
+  const changeOrientation = (e) => {
+    // NOTE: 
+    // tmpElements will point to the html element that has the 'currentClickFocus'
+    // class. 
+    let tmpElements = document.getElementsByClassName("currentClickFocus");
+    if (tmpElements.length == 0) {
+      // NOTE:
+      // This will initiate the first element to have 'currentClickFocus' class 
+      // name
+      e.target.parentElement.classList.add("currentClickFocus");
+    } else {
+      // currently clicked ship
+      const clickedItemParentHTML = e.target.parentElement;
+      // previously clicked ship
+      const prevItemParentHTML = tmpElements[0];
+
+      if (clickedItemParentHTML.id == prevItemParentHTML.id) {
+        clickedItemParentHTML.classList.toggle("row");
+      } else {
+        prevItemParentHTML.classList.remove("currentClickFocus");
+        clickedItemParentHTML.classList.add("currentClickFocus");
+      }
+    }
+  };
+
   return { placement, round };
 })();
 
