@@ -297,6 +297,66 @@ const array2Num = arr => (10 * arr[1]) + arr[0];
     }
   };
 
+  const dragEnded = (e) => {
+    let board = document.getElementById("player1Board");
+    // let xCoor = document.getElementById("mouseX");
+    // let yCoor = document.getElementById("mouseY");
+    // let x = xCoor.textContent.replace("mouse x:", "");
+    // let y = yCoor.textContent.replace("mouse y:", "");
+    let x = document
+      .getElementById("mouseX")
+      .textContent.replace("mouse x:", "");
+    let y = document
+      .getElementById("mouseY")
+      .textContent.replace("mouse y:", "");
+
+    let orientation = e.target.getAttribute("class").includes("row")
+      ? "row"
+      : "column";
+
+    // let dragBlock = document
+    //   .getElementById("yCoor")
+    //   .textContent.replace("y block: ", "");
+    let dragBlock = tmpY;
+
+    console.log(
+      `mouseX: ${mouseX}, mouseY: ${mouseY}, x: ${x}, y: ${y}, offsetX: ${offsetX}, offsetY: ${offsetY}`,
+    );
+
+    if (p1gbTop < y && p1gbBottom > y && p1gbLeft < x && p1gbRight > x) {
+      // if (
+      //   p1gbTop < mouseY &&
+      //   p1gbBottom > mouseY &&
+      //   p1gbLeft < mouseX &&
+      //   p1gbRight > mouseX
+      // ) {
+      let targetSq = document.getElementById(dropTarget);
+      let tmpStr = dropTarget.replace("sqId_player1-", "");
+
+      // let tmpArray = player1.placeShip(
+      let tmpArray = placeShip(e.target.id, tmpStr, orientation, dragBlock);
+
+      if (tmpArray !== undefined && player1.place(e.target.id, tmpArray)) {
+        e.target.remove();
+        isDragging = false;
+        e.target.classList.remove("dragging");
+      }
+
+      // check if the footer div is empty or not
+      let footerUpperDiv = document.getElementById("footerUpper");
+      let footerLowerDiv = document.getElementById("footerLower");
+      // console.dir(footerUpperDiv.children);
+      if (footerUpperDiv.children.length === 0) {
+        console.log("footer Upper Div has no more children");
+      }
+      if (footerLowerDiv.children === 0) {
+        console.log("footer Lower Div has no more children");
+      }
+    }
+    // isDragging = false;
+    // e.target.classList.remove("dragging");
+  };
+
   return { placement, round };
 })();
 
