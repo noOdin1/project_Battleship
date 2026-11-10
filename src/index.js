@@ -363,6 +363,14 @@ const array2Num = arr => (10 * arr[1]) + arr[0];
     draggable.addEventListener("dragend", dragEnded);
   });
 
+  document.body.addEventListener("dragover", (e) => {
+    e.preventDefault();
+    let x = document.getElementById("mouseX");
+    let y = document.getElementById("mouseY");
+    x.textContent = "mouse x: " + `${e.pageX}`;
+    y.textContent = "mouse y: " + `${e.pageY}`;
+  });
+
   return { placement, round };
 })();
 
