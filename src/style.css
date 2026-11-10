@@ -184,3 +184,98 @@ body {
   height: 30%;
 }
 
+div#battleship01.row,
+div[id*="cruiser"].row,
+div[id*="destroyer"].row {
+  display: flex;
+  flex-direction: row;
+}
+
+div#battleship01,
+div[id*="cruiser"],
+div[id*="destroyer"] {
+  display: flex;
+  flex-direction: column;
+}
+
+/* p._battleship { */
+/*   height: calc(var(--shipBlock, 24px) * 4); */
+/*   width: var(--shipBlock); */
+/*   border: var(--shipBorder); */
+/* } */
+/**/
+/* p._cruiser { */
+/*   height: calc(var(--shipBlock, 24px) * 3); */
+/*   width: var(--shipBlock); */
+/*   border: var(--shipBorder); */
+/* } */
+/**/
+/* p._destroyer { */
+/*   height: calc(var(--shipBlock, 24px) * 2); */
+/*   width: var(--shipBlock); */
+/*   border: var(--shipBorder); */
+/* } */
+/**/
+/* p.patrolBoat, */
+/* p._patrolBoat, */
+/* p.destroyer, */
+/* p.cruiser, */
+/* p.battleship { */
+/*   height: var(--shipBlock, 24px); */
+/*   width: var(--shipBlock); */
+/*   border: var(--shipBorder); */
+/*   background-color: red; */
+/* } */
+/**/
+p._patrolBoatPart,
+p._destroyerPart,
+p._cruiserPart,
+p._battleshipPart {
+  height: var(--shipBlock, 24px);
+  width: var(--shipBlock);
+  border: var(--shipBorder);
+  background-color: skyblue;
+}
+
+p.draggable {
+  /* padding: 0.05rem; */
+  background-color: #ccc;
+  border: var(--shipBorder);
+  cursor: move;
+}
+
+p.draggable.dragging {
+  opacity: 0.9;
+  border: var(--shipBorder);
+}
+
+div[class*="battleship"],
+div[class*="cruiser"],
+div[class*="patrol"],
+div[class*="destroyer"] {
+  background-color: green;
+}
+
+div .currentClickFocus {
+  border: var(--shipFocus);
+}
+
+/* start - For testing and debugging */
+#debugMouse {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+#debugMouseRow1,
+#debugMouseRow2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+p#xCoor,
+p#yCoor {
+  background-color: #aaa;
+}
+/* end - For testing and debugging */
