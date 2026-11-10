@@ -34,6 +34,12 @@
   --debugBorder1: 1px solid MediumVioletRed;
   --debugBorder2: 1px solid blue;
 
+  /* border colors for each ship */
+  --shipBorder: 1px solid deepskyblue;
+
+  /* border color for current ship in focus [to be placed] */
+  --shipFocus: 1px solid red;
+
   /* dimensions and styling for boards */
   --boardWidth: 280px;
   --boardHeight: 280px;
