@@ -17,6 +17,7 @@ import {
 import { Tree } from "./binary_search_tree.js";
 import { LinkedList } from "./linked_list.js";
 import { Ship } from "./ship.js";
+import { shipCount, shipDim } from "./player.js";
 
 class Gameboard {
   // NOTE:
