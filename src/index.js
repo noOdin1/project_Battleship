@@ -357,6 +357,12 @@ const array2Num = arr => (10 * arr[1]) + arr[0];
     // e.target.classList.remove("dragging");
   };
 
+  draggables.forEach((draggable) => {
+    draggable.addEventListener("dragstart", dragStarted);
+
+    draggable.addEventListener("dragend", dragEnded);
+  });
+
   return { placement, round };
 })();
 
