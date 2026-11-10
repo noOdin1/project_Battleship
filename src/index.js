@@ -133,6 +133,79 @@ const array2Num = arr => (10 * arr[1]) + arr[0];
     return collision;
   };
 
+  const markInvalidArea = (arr) => {
+    let leftBorder = false;
+    let rightBorder = false;
+    let topBorder = false;
+    let bottomBorder = false;
+
+    let invalidArea = [];
+
+    for (let i = 0; i < arr.length; i++) {
+      if (arr[i] % 10 == 0) {
+        leftBorder = true;
+      }
+      if (arr[i] % 10 == 9) {
+        rightBorder = true;
+      }
+      if (arr[i] >= 0 && arr[i] <= 9) {
+        topBorder = true;
+      }
+      if (arr[i] >= 90 && arr[i] <= 99) {
+        bottomBorder = true;
+      }
+      console.log(`Line 139 - i: ${i}, arr[i]: ${arr[i]}`);
+      let [y, x] = num2Array(arr[i]);
+
+      // for square not near any borders
+      invalidArea = [[x - 1, y], [x - 1, y - 1], [x - 1, y + 1],
+      [x, y - 1], [x, y], [x, y + 1],
+      [x + 1, y], [x + 1, y - 1], [x + 1, y + 1]];
+      if (leftBorder) {
+        invalidArea = [[x, y - 1], [x, y], [x, y + 1],
+        [x + 1, y], [x + 1, y - 1], [x + 1, y + 1]];
+      }
+      if (rightBorder) {
+        invalidArea = [[x - 1, y], [x - 1, y - 1], [x - 1, y + 1],
+        [x, y - 1], [x, y], [x, y + 1]];
+      }
+
+      if (topBorder) {
+        invalidArea = [[x - 1, y], [x - 1, y + 1],
+        [x, y], [x, y + 1],
+        [x + 1, y], [x + 1, y + 1]];
+      }
+      if (bottomBorder) {
+        invalidArea = [[x - 1, y], [x - 1, y - 1],
+        [x, y - 1], [x, y],
+        [x + 1, y], [x + 1, y - 1]];
+      }
+      if (leftBorder && topBorder) {
+        invalidArea = [[x, y], [x, y + 1],
+        [x + 1, y], [x + 1, y + 1]];
+      }
+      if (leftBorder && bottomBorder) {
+        invalidArea = [[x, y - 1], [x, y],
+        [x + 1, y], [x + 1, y - 1]];
+      }
+      if (rightBorder && topBorder) {
+        invalidArea = [[x - 1, y], [x - 1, y + 1],
+        [x, y], [x, y + 1]];
+      }
+      if (rightBorder && bottomBorder) {
+        invalidArea = [[x - 1, y], [x - 1, y - 1],
+        [x, y - 1], [x, y]];
+      }
+      for (let j = 0; j < invalidArea.length; j++) {
+        let tmpSq = array2Num(invalidArea[j]);
+        let tmpElement = document.getElementById("sqId_player1-" + tmpSq);
+        if (!tmpElement.classList.contains("invalid")) {
+          tmpElement.classList.add("invalid");
+        }
+      }
+    }
+  }
+
   return { placement, round };
 })();
 
