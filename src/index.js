@@ -114,7 +114,6 @@ const array2Num = arr => (10 * arr[1]) + arr[0];
     dragItemDim = e.target.getBoundingClientRect();
   };
 
-  function round() {}
 
   return { placement, round };
 })();
