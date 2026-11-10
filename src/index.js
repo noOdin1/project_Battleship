@@ -206,6 +206,97 @@ const array2Num = arr => (10 * arr[1]) + arr[0];
     }
   }
 
+  const placeShip = (shipId, sqNum, orientation) => {
+    sqNum = parseInt(sqNum, 10);
+    if (
+      shipId.includes("battleship") ||
+      shipId.includes("cruiser") ||
+      shipId.includes("destroyer") ||
+      shipId.includes("patrolBoat")
+    ) {
+      let shipLen = shipDim[shipId.replace(/..$/, "")];
+      let [nthBlockTop, nthBlockLeft] = num2Array(sqNum);
+      let altSqNum;
+      let invertedDragBlock;
+
+      // console.log(
+      //   `placing ${shipId}, dim: ${shipDim[shipId.replace(/..$/, "")]}, sqNum: ${sqNum}, dragBlock: ${dragBlock}, altSqNum: ${altSqNum}, shipLen: ${shipLen}, nthBlockTop: ${nthBlockTop}, nthBlockLeft: ${nthBlockLeft}, invertedDragBlock: ${invertedDragBlock}`,
+      // );
+      let tmpRes = Array.from(
+        { length: shipDim[shipId.replace(/..$/, "")] },
+        (element, index) => index,
+      )
+        .map((x) => {
+          return orientation === "column"
+            ? 10 * (x - dragBlock)
+            : x - dragBlock;
+        })
+        .map((x) => sqNum + x);
+
+      let overflowBlocks = 0;
+      let [row, col] = num2Array(sqNum);
+
+      tmpRes.forEach((x, idx) => {
+        let [tgtrow, tgtcol] = num2Array(x);
+        if (orientation === "row") {
+          if (row != tgtrow) {
+            overflowBlocks++;
+          }
+        }
+        if (orientation === "column") {
+          if (x > 100 || x < 0) {
+            overflowBlocks++;
+          }
+        }
+      });
+      let shiftedArray;
+      if (overflowBlocks != 0) {
+        if (orientation === "row") {
+          if (col < 4) {
+            shiftedArray = Array.from(
+              { length: shipDim[shipId.replace(/..$/, "")] },
+              (_, i) => i + row * 10,
+            );
+          }
+          if (col > 7) {
+            shiftedArray = Array.from(
+              { length: shipDim[shipId.replace(/..$/, "")] },
+              (_, i) => 9 - i + row * 10,
+            );
+          }
+        }
+        if (orientation === "column") {
+          if (row < 3) {
+            shiftedArray = Array.from(
+              { length: shipDim[shipId.replace(/..$/, "")] },
+              (_, i) => i * 10 + col,
+            );
+          }
+          if (row > 6) {
+            shiftedArray = Array.from(
+              { length: shipDim[shipId.replace(/..$/, "")] },
+              (_, i) => (9 - i) * 10 + col,
+            );
+          }
+        }
+      }
+      if (shiftedArray != undefined) {
+        tmpRes = JSON.parse(JSON.stringify(shiftedArray.sort()));
+      }
+      if (validatePlacing(tmpRes)) {
+        console.log("Invalid coordinate");
+        tmpRes = undefined;
+      }
+      // mark 1 square around the ship as invalid placement area
+      if (tmpRes != undefined) {
+        markInvalidArea(tmpRes);
+      }
+      // console.dir(tmpRes);
+
+      return tmpRes;
+    }
+  };
+
   return { placement, round };
 })();
 
