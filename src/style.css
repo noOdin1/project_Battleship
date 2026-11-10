@@ -154,9 +154,27 @@ body {
   margin-right: auto;
   border: var(--debugBorder1);
   display: flex;
+  flex-direction: column;
+  /* justify-content: space-around; */
+  /* flex-wrap: wrap; */
+  align-items: center;
+}
+
+#footerUpper,
+#footerLower {
+  width: 100%;
+  display: flex;
   flex-direction: row;
   justify-content: space-around;
-  /* align-content: center; */
+  flex-wrap: wrap;
   align-items: center;
+  border: 2px solid red;
+}
+
+#footerUpper {
+  height: 55%;
+}
+#footerLower {
+  height: 30%;
 }
 
