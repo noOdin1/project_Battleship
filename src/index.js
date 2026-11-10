@@ -52,6 +52,22 @@ const array2Num = arr => (10 * arr[1]) + arr[0];
   let dragBlock; /* This represent the block that the cursor clicked on */
 
   const draggables = document.querySelectorAll(".draggable");
+
+  const mouseAction = (e) => {
+    let x = document.getElementById("mouseX");
+    let y = document.getElementById("mouseY");
+    mouseX = e.pageX;
+    mouseY = e.pageY;
+    // console.log(`mouseX: ${mouseX}`);
+    // console.log(`mouseY: ${mouseY}`);
+    x.textContent = `mouse x: ${mouseX}`;
+    y.textContent = `mouse y: ${mouseY}`;
+  };
+
+  window.addEventListener("mousemove", mouseAction);
+  window.addEventListener("mousedown", mouseAction);
+  window.addEventListener("mouseup", mouseAction);
+
   const boardSquares = document.querySelectorAll(".boardSq.player1");
   boardSquares.forEach((sq) => {
     sq.addEventListener("drop", (e) => {
