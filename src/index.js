@@ -104,8 +104,8 @@ const array2Num = arr => (10 * arr[1]) + arr[0];
     //  event (or in this case 'e') with it's offset represents
     //  the cursor's location when it is clicked within this
     //  element, wrt top left corner
-    let tmpX = Math.floor(e.offsetX / 24) + 1;
-    let tmpY = Math.floor(e.offsetY / 24) + 1;
+    tmpX = Math.floor(e.offsetX / 24) + 1;
+    tmpY = Math.floor(e.offsetY / 24) + 1;
     xCoor.textContent = "x block: " + tmpX;
     yCoor.textContent = "y block: " + tmpY;
     dragBlock = e.target.getAttribute("class").includes("row") ? tmpX : tmpY;
