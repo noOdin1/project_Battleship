@@ -40,6 +40,8 @@
   --sqWidth: calc(calc(var(--boardWidth) / 10) - 10);
   --sqHeight: calc(calc(var(--boardHeight) / 10) - 10);
 
+  --shipBlock: 24px;
+
   --missRadius: 20px;
 }
 
