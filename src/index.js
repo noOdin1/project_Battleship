@@ -402,6 +402,52 @@ const array2Num = arr => (10 * arr[1]) + arr[0];
     }
   };
 
+  const createAllShips = () => {
+    // dynamically generate the ships for placement
+    let ships = [];
+    Object.keys(shipCount).forEach((x) => {
+      let shipCountPerType = shipCount[x];
+      for (let i = 1; i <= shipCountPerType; i++) {
+        let tmpDiv = createDiv(
+          ["draggable", `_${x}`, "shipClickable", "row"],
+          `${x}0${i}`,
+        );
+        tmpDiv.setAttribute("draggable", true);
+        let shipDimCount = shipDim[x];
+        for (let j = 1; j <= shipDimCount; j++) {
+          let pTmp = createP(
+            [`_${x}Part`],
+            `${x}${i}` + String.fromCodePoint(97 + j - 1),
+          );
+          tmpDiv.appendChild(pTmp);
+        }
+        tmpDiv.addEventListener("dragstart", dragStarted);
+        tmpDiv.addEventListener("dragend", dragEnded);
+        ships.push(tmpDiv);
+      }
+    });
+    let footerUpperDiv = document.getElementById("footerUpper");
+    let footerLowerDiv = document.getElementById("footerLower");
+    ships.forEach((x) => {
+      if (
+        x.getAttribute("id").includes("battleship") ||
+        x.getAttribute("id").includes("cruiser")
+      ) {
+        footerUpperDiv.appendChild(x);
+      } else {
+        footerLowerDiv.appendChild(x);
+      }
+    });
+
+    // add a click event for each div for toggling between
+    // horizontal and vertical position
+    Array.from(document.getElementsByClassName("shipClickable")).forEach(
+      (x) => {
+        x.addEventListener("click", changeOrientation);
+      },
+    );
+  };
+
   return { placement, round };
 })();
 
