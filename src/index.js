@@ -92,6 +92,20 @@ const array2Num = arr => (10 * arr[1]) + arr[0];
     });
   });
 
+  draggables.forEach((draggable) => {
+    draggable.addEventListener("dragstart", dragStarted);
+
+    draggable.addEventListener("dragend", dragEnded);
+  });
+
+  document.body.addEventListener("dragover", (e) => {
+    e.preventDefault();
+    let x = document.getElementById("mouseX");
+    let y = document.getElementById("mouseY");
+    x.textContent = "mouse x: " + `${e.pageX}`;
+    y.textContent = "mouse y: " + `${e.pageY}`;
+  });
+
   const dragStarted = (e) => {
     isDragging = true;
     e.target.classList.add("dragging");
@@ -356,20 +370,6 @@ const array2Num = arr => (10 * arr[1]) + arr[0];
     // isDragging = false;
     // e.target.classList.remove("dragging");
   };
-
-  draggables.forEach((draggable) => {
-    draggable.addEventListener("dragstart", dragStarted);
-
-    draggable.addEventListener("dragend", dragEnded);
-  });
-
-  document.body.addEventListener("dragover", (e) => {
-    e.preventDefault();
-    let x = document.getElementById("mouseX");
-    let y = document.getElementById("mouseY");
-    x.textContent = "mouse x: " + `${e.pageX}`;
-    y.textContent = "mouse y: " + `${e.pageY}`;
-  });
 
   // The click on each ship will change it's orientation. But I need to 
   // add another functionality. 
