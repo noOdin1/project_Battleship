@@ -40,13 +40,18 @@ class Player {
         //   `shipName: ${shipName}, arrayBlocks: ${JSON.stringify(arrayBlocks)}, x: ${x["name"]},
         //    ships: ${JSON.stringify(this.ships)}, blocks: ${JSON.stringify(x["blocks"])}`,
         // );
-        x.setBlocks(arrayBlocks);
-        shipFound = true;
-        arrayBlocks.forEach((y) => {
-          let tmpNode = this.gameboard.node(y);
-          tmpNode.val[Gameboard.shipId] = x["name"];
-          tmpNode.val[Gameboard.shipDiv].classList.add(x["name"]);
-        });
+        try {
+          x.setBlocks(arrayBlocks);
+          shipFound = true;
+          arrayBlocks.forEach((y) => {
+            let tmpNode = this.gameboard.node(y);
+            tmpNode.val[Gameboard.shipId] = x["name"];
+            tmpNode.val[Gameboard.shipDiv].classList.add(x["name"]);
+          });
+        } catch (error) {
+          console.log(`Player class@place: error assigning blocks`);
+          return false;
+        }
       }
     });
 
