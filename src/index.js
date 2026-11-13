@@ -74,42 +74,48 @@ const array2Num = arr => (10 * arr[1]) + arr[0];
   window.addEventListener("mouseup", mouseAction);
 
   // Adding EventListeners to each boardSq of player1
-  const boardSquares = document.querySelectorAll(".boardSq.player1");
-  boardSquares.forEach((sq) => {
-    sq.addEventListener("drop", (e) => {
-      dropTarget = e.target.id;
-    });
-    sq.addEventListener("dragOver", (e) => {
-      console.log("square id: " + e.target.id);
-    });
-    // function to handle touch screen devices. Users click on the ship and
-    // then the square on the board where they want to place it.
-    sq.addEventListener("click", (ev) => {
-      let focusedShip = document.getElementsByClassName("currentClickFocus");
-      if (!focusedShip.length == 0) {
-        let shipOrient = focusedShip[0].classList.contains("row") ? "row" : "column";
-        dragBlock = 0;
-        let tmpRes = placeShip(focusedShip[0].id, ev.target.id.replace("sqId_player1-", ""), shipOrient);
-        if (tmpRes !== undefined && player1.place(focusedShip[0].id, tmpRes)) {
-          focusedShip[0].remove();
+  // TODO:
+  // Changes needed here for activating player 2 board for placement
+  //const boardSquares = document.querySelectorAll(".boardSq.player2");
+  // const boardSquares = document.querySelectorAll(".boardSq.player1");
+  const addELtoBoardSq = () => {
+    const boardSquares = document.querySelectorAll(".boardSq." + placementTurn);
+    boardSquares.forEach((sq) => {
+      sq.addEventListener("drop", (e) => {
+        dropTarget = e.target.id;
+      });
+      sq.addEventListener("dragOver", (e) => {
+        console.log("square id: " + e.target.id);
+      });
+      // function to handle touch screen devices. Users click on the ship and
+      // then the square on the board where they want to place it.
+      sq.addEventListener("click", (ev) => {
+        let focusedShip = document.getElementsByClassName("currentClickFocus");
+        if (!focusedShip.length == 0) {
+          let shipOrient = focusedShip[0].classList.contains("row") ? "row" : "column";
+          dragBlock = 0;
+          // let tmpRes = placeShip(focusedShip[0].id, ev.target.id.replace("sqId_player1-", ""), shipOrient);
+          let tmpRes = placeShip(focusedShip[0].id, ev.target.id.replace("sqId_" + placementTurn + "-", ""), shipOrient);
+          if (tmpRes !== undefined && player1.place(focusedShip[0].id, tmpRes)) {
+            focusedShip[0].remove();
+          }
         }
-      }
+      });
     });
-  });
+    draggables.forEach((draggable) => {
+      draggable.addEventListener("dragstart", dragStarted);
 
-  draggables.forEach((draggable) => {
-    draggable.addEventListener("dragstart", dragStarted);
+      draggable.addEventListener("dragend", dragEnded);
+    });
 
-    draggable.addEventListener("dragend", dragEnded);
-  });
-
-  document.body.addEventListener("dragover", (e) => {
-    e.preventDefault();
-    let x = document.getElementById("mouseX");
-    let y = document.getElementById("mouseY");
-    x.textContent = "mouse x: " + `${e.pageX}`;
-    y.textContent = "mouse y: " + `${e.pageY}`;
-  });
+    document.body.addEventListener("dragover", (e) => {
+      e.preventDefault();
+      let x = document.getElementById("mouseX");
+      let y = document.getElementById("mouseY");
+      x.textContent = "mouse x: " + `${e.pageX}`;
+      y.textContent = "mouse y: " + `${e.pageY}`;
+    });
+  }
 
   const dragStarted = (e) => {
     isDragging = true;
