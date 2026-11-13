@@ -37,13 +37,10 @@ const array2Num = arr => (10 * arr[1]) + arr[0];
   let gameEnd = false;
 
   // let box = player1.getParentHtml().getBoundingClientRect();
-  let box = placementTurn == "player1" ?
-    player1.getParentHtml().getBoundingClientRect() :
-    player2.getParentHtml().getBoundingClientRect();
-  let gbLeft = box.left;
-  let gbTop = box.top;
-  let gbBottom = box.bottom;
-  let gbRight = box.right;
+  let gbLeft;
+  let gbTop;
+  let gbBottom;
+  let gbRight;
 
   let tmpY;
   let tmpX;
@@ -55,8 +52,6 @@ const array2Num = arr => (10 * arr[1]) + arr[0];
   let dropTarget;
   let dragItemDim;
   let dragBlock; /* This represent the block that the cursor clicked on */
-
-  const draggables = document.querySelectorAll(".draggable");
 
   const mouseAction = (e) => {
     let x = document.getElementById("mouseX");
@@ -79,6 +74,15 @@ const array2Num = arr => (10 * arr[1]) + arr[0];
   //const boardSquares = document.querySelectorAll(".boardSq.player2");
   // const boardSquares = document.querySelectorAll(".boardSq.player1");
   const addELtoBoardSq = () => {
+    let box = placementTurn == "player1" ?
+      player1.getParentHtml().getBoundingClientRect() :
+      player2.getParentHtml().getBoundingClientRect();
+
+    gbLeft = box.left;
+    gbTop = box.top;
+    gbBottom = box.bottom;
+    gbRight = box.right;
+
     const boardSquares = document.querySelectorAll(".boardSq." + placementTurn);
     boardSquares.forEach((sq) => {
       sq.addEventListener("drop", (e) => {
@@ -102,6 +106,8 @@ const array2Num = arr => (10 * arr[1]) + arr[0];
         }
       });
     });
+    const draggables = document.querySelectorAll(".draggable");
+
     draggables.forEach((draggable) => {
       draggable.addEventListener("dragstart", dragStarted);
 
