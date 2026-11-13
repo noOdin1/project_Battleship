@@ -27,21 +27,26 @@ const array2Num = arr => (10 * arr[1]) + arr[0];
   // board dimensions and mapping
   const boardWidth = 10;
   const boardHeight = 10;
-  let p1gb = new Gameboard(document.getElementById("player1Board"));
-  let p2gb = new Gameboard(document.getElementById("player2Board"));
-  let player = new Player();
 
-  let box = p1gb.get_parentHtml().getBoundingClientRect();
-  let p1gbLeft = box.left;
-  let p1gbTop = box.top;
-  let p1gbBottom = box.bottom;
-  let p1gbRight = box.right;
+  // NOTE:
+  // Testing Player class
+  let player1 = new Player("player1", document.getElementById("player1Board"));
+  let player2 = new Player("player2", document.getElementById("player2Board"));
 
-  let player1Ships = [];
+  let placementTurn = "player1";
+  let gameEnd = false;
 
-  p1gb.buildBoards();
-  p2gb.buildBoards();
+  // let box = player1.getParentHtml().getBoundingClientRect();
+  let box = placementTurn == "player1" ?
+    player1.getParentHtml().getBoundingClientRect() :
+    player2.getParentHtml().getBoundingClientRect();
+  let gbLeft = box.left;
+  let gbTop = box.top;
+  let gbBottom = box.bottom;
+  let gbRight = box.right;
 
+  let tmpY;
+  let tmpX;
   let offsetX = 0;
   let offsetY = 0;
   let mouseX = 0;
