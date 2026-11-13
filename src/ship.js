@@ -23,7 +23,7 @@ class Ship {
       this.blocks = arr.map((x) => [parseInt(x, 10), "none"]);
       return;
     }
-    throw new Error(`Error setting ${this.name} blocks`);
+    throw new Error(`Ship class@setblocks: Error setting ${this.name} blocks`);
   }
 
   getBlocks() {
