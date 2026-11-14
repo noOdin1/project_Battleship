@@ -98,11 +98,9 @@ const array2Num = arr => (10 * arr[1]) + arr[0];
         if (!focusedShip.length == 0) {
           let shipOrient = focusedShip[0].classList.contains("row") ? "row" : "column";
           dragBlock = 0;
-          // let tmpRes = placeShip(focusedShip[0].id, ev.target.id.replace("sqId_player1-", ""), shipOrient);
           let tmpRes = placeShip(focusedShip[0].id, ev.target.id.replace("sqId_" + placementTurn + "-", ""), shipOrient);
           let placeSuccessful = placementTurn == "player1" ?
             player1.place(focusedShip[0].id, tmpRes) : player2.place(focusedShip[0].id, tmpRes);
-          // if (tmpRes !== undefined && player1.place(focusedShip[0].id, tmpRes)) {
           if (tmpRes !== undefined && placeSuccessful) {
             focusedShip[0].remove();
           }
