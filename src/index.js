@@ -149,24 +149,24 @@ const array2Num = arr => (10 * arr[1]) + arr[0];
   const validatePlacing = (arr) => {
     let collision = false;
 
-    if (placementTurn === "player1") {
-      let tmpGameboard = player1.getGameboard();
-      arr.forEach((x) => {
-        let tmpNode = tmpGameboard.node(x);
-        Object.keys(shipDim).forEach((x) => {
-          try {
-            let classList = tmpNode.val[Gameboard.shipDiv].classList.value;
-            if (classList.includes(x) || classList.includes("invalid")) {
-              console.log(`This square is occupied`);
-              collision = true;
-            }
-          } catch (error) {
-            console.log(`Error encountered: ${error}`);
-            return false;
+    let tmpGameboard = placementTurn == "player1" ?
+      player1.getGameboard() : player2.getGameboard();
+    arr.forEach((x) => {
+      let tmpNode = tmpGameboard.node(x);
+      Object.keys(shipDim).forEach((x) => {
+        try {
+          let classList = tmpNode.val[Gameboard.shipDiv].classList.value;
+          if (classList.includes(x) || classList.includes("invalid")) {
+            console.log(`This square is occupied`);
+            collision = true;
           }
-        });
+        } catch (error) {
+          console.log(`Error encountered: ${error}`);
+          return false;
+        }
       });
-    }
+    });
+
     return collision;
   };
 
