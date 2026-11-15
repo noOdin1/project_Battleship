@@ -356,6 +356,7 @@ const array2Num = arr => (10 * arr[1]) + arr[0];
       `mouseX: ${mouseX}, mouseY: ${mouseY}, x: ${x}, y: ${y}, offsetX: ${offsetX}, offsetY: ${offsetY}`,
     );
 
+    if (gbTop < y && gbBottom > y && gbLeft < x && gbRight > x) {
       let targetSq = document.getElementById(dropTarget);
       let tmpStr = dropTarget.replace("sqId_player1-", "");
 
