@@ -235,7 +235,7 @@ const array2Num = arr => (10 * arr[1]) + arr[0];
       }
       for (let j = 0; j < invalidArea.length; j++) {
         let tmpSq = array2Num(invalidArea[j]);
-        let tmpElement = document.getElementById("sqId_player1-" + tmpSq);
+        let tmpElement = document.getElementById("sqId_" + placementTurn + "-" + tmpSq);
         if (!tmpElement.classList.contains("invalid")) {
           tmpElement.classList.add("invalid");
         }
