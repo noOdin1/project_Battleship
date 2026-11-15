@@ -360,7 +360,6 @@ const array2Num = arr => (10 * arr[1]) + arr[0];
       let targetSq = document.getElementById(dropTarget);
       let tmpStr = dropTarget.replace("sqId_" + placementTurn + "-", "");
 
-      // let tmpArray = player1.placeShip(
       let tmpArray = placeShip(e.target.id, tmpStr, orientation, dragBlock);
 
       if (tmpArray !== undefined && player1.place(e.target.id, tmpArray)) {
