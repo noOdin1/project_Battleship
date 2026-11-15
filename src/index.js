@@ -323,6 +323,7 @@ const array2Num = arr => (10 * arr[1]) + arr[0];
       if (validatePlacing(tmpRes)) {
         console.log("index.js annonymous@placeShip: Invalid coordinate");
         tmpRes = undefined;
+        return;
       }
       // mark 1 square around the ship as invalid placement area
       if (tmpRes != undefined) {
