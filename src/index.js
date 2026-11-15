@@ -321,7 +321,7 @@ const array2Num = arr => (10 * arr[1]) + arr[0];
         tmpRes = JSON.parse(JSON.stringify(shiftedArray.sort()));
       }
       if (validatePlacing(tmpRes)) {
-        console.log("Invalid coordinate");
+        console.log("index.js annonymous@placeShip: Invalid coordinate");
         tmpRes = undefined;
       }
       // mark 1 square around the ship as invalid placement area
