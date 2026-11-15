@@ -362,7 +362,9 @@ const array2Num = arr => (10 * arr[1]) + arr[0];
 
       let tmpArray = placeShip(e.target.id, tmpStr, orientation, dragBlock);
 
-      if (tmpArray !== undefined && player1.place(e.target.id, tmpArray)) {
+      let placeSuccessful = placementTurn == "player1" ?
+        player1.place(e.target.id, tmpArray) : player2.place(e.target.id, tmpArray);
+      if (tmpArray !== undefined && placeSuccessful) {
         e.target.remove();
         isDragging = false;
         e.target.classList.remove("dragging");
