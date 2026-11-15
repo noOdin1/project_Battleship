@@ -336,11 +336,6 @@ const array2Num = arr => (10 * arr[1]) + arr[0];
   };
 
   const dragEnded = (e) => {
-    let board = document.getElementById("player1Board");
-    // let xCoor = document.getElementById("mouseX");
-    // let yCoor = document.getElementById("mouseY");
-    // let x = xCoor.textContent.replace("mouse x:", "");
-    // let y = yCoor.textContent.replace("mouse y:", "");
     let x = document
       .getElementById("mouseX")
       .textContent.replace("mouse x:", "");
@@ -361,13 +356,6 @@ const array2Num = arr => (10 * arr[1]) + arr[0];
       `mouseX: ${mouseX}, mouseY: ${mouseY}, x: ${x}, y: ${y}, offsetX: ${offsetX}, offsetY: ${offsetY}`,
     );
 
-    if (p1gbTop < y && p1gbBottom > y && p1gbLeft < x && p1gbRight > x) {
-      // if (
-      //   p1gbTop < mouseY &&
-      //   p1gbBottom > mouseY &&
-      //   p1gbLeft < mouseX &&
-      //   p1gbRight > mouseX
-      // ) {
       let targetSq = document.getElementById(dropTarget);
       let tmpStr = dropTarget.replace("sqId_player1-", "");
 
