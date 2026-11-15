@@ -358,7 +358,7 @@ const array2Num = arr => (10 * arr[1]) + arr[0];
 
     if (gbTop < y && gbBottom > y && gbLeft < x && gbRight > x) {
       let targetSq = document.getElementById(dropTarget);
-      let tmpStr = dropTarget.replace("sqId_player1-", "");
+      let tmpStr = dropTarget.replace("sqId_" + placementTurn + "-", "");
 
       // let tmpArray = player1.placeShip(
       let tmpArray = placeShip(e.target.id, tmpStr, orientation, dragBlock);
