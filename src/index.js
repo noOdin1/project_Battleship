@@ -69,10 +69,6 @@ const array2Num = arr => (10 * arr[1]) + arr[0];
   window.addEventListener("mouseup", mouseAction);
 
   // Adding EventListeners to each boardSq of player1
-  // TODO:
-  // Changes needed here for activating player 2 board for placement
-  //const boardSquares = document.querySelectorAll(".boardSq.player2");
-  // const boardSquares = document.querySelectorAll(".boardSq.player1");
   const addELtoBoardSq = () => {
     let box = placementTurn == "player1" ?
       player1.getParentHtml().getBoundingClientRect() :
