@@ -176,6 +176,10 @@ const array2Num = arr => (10 * arr[1]) + arr[0];
     let topBorder = false;
     let bottomBorder = false;
 
+    if (arr == undefined || arr.length == 0) {
+      return;
+    }
+
     let invalidArea = [];
 
     for (let i = 0; i < arr.length; i++) {
