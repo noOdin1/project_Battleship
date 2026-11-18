@@ -50,6 +50,17 @@
   --shipBlock: 24px;
 
   --missRadius: 20px;
+
+  /** 
+   * variables for headers sections. 2 sections, 
+   * headUpper and headLower. 
+   **/
+  --headDivsWidth: 100%; 
+  --headUpperHeight: 40%;
+  --headLowerHeight: 60%;
+
+  --headLowerTopHeight: 50%;
+  --headLowerLowerHeight: 50%;
 }
 
 body {
