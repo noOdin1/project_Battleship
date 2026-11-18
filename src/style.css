@@ -27,8 +27,8 @@
 
   /* div dimensions */
   --bodyDivHeight: calc(100vh * 0.7);
-  --headDivHeight: calc(100vh * 0.08);
-  --footerDivHeight: calc(100vh * 0.2);
+  --headDivHeight: calc(100vh * 0.10);
+  --footerDivHeight: calc(100vh * 0.18);
 
   /* css debug borders */
   --debugBorder1: 1px solid MediumVioletRed;
