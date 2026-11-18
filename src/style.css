@@ -33,6 +33,7 @@
   /* css debug borders */
   --debugBorder1: 1px solid MediumVioletRed;
   --debugBorder2: 1px solid blue;
+  --debugBorder3: 1px solid green;
 
   /* border colors for each ship */
   --shipBorder: 1px solid deepskyblue;
